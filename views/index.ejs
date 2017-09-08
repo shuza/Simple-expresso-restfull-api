@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn Node Js</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+
+<% include templates/header.ejs %>
+
+<h3>Task List</h3>
+
+<ul>
+    <% if (tasks){
+    tasks.forEach(function (item) { %>
+    <li><%= item.title %></li>
+    <% })
+    } else{ %>
+    <h3>no task</h3>
+    <% } %>
+</ul>
+
+<div id="task-add-div">
+    <form action="/add-task" id="addTaskForm" method="post" role="form">
+        <label>Task : </label>
+        <input name="taskName" , type="text" required placeholder="Enter Task title" class="form-control">
+            <button type="submit"><strong>Add Task</strong></button>
+    </form>
+
+</div>
+
+</body>
+</html>
